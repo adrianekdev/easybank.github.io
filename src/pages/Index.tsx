@@ -46,7 +46,7 @@ const Index = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8 animate-fade-in">
-          <h2 className="text-2xl font-bold mb-2">Good morning, Sarah! ☀️</h2>
+          <h2 className="text-2xl font-bold mb-2">Good morning, Adrian! ☀️</h2>
           <p className="text-muted-foreground">Here's your financial overview for today.</p>
         </div>
 
