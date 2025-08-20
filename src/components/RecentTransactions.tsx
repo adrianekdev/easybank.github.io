@@ -52,19 +52,19 @@ const transactions = [
 
 export const RecentTransactions = () => {
   return (
-    <Card className="p-6 shadow-card bg-gradient-card">
+    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold">Recent Transactions</h2>
-        <Button variant="ghost" size="sm" className="text-banking-primary">
+        <Button variant="ghost" size="sm" className="text-banking-primary hover:scale-105 transition-transform">
           View All
         </Button>
       </div>
       
       <div className="space-y-3">
-        {transactions.map((transaction) => (
-          <div key={transaction.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/30 transition-colors">
+        {transactions.map((transaction, index) => (
+          <div key={transaction.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/30 transition-all duration-200 hover:scale-[1.02] group animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
             <div className="flex items-center gap-3">
-              <div className={`p-2 rounded-full ${
+              <div className={`p-2 rounded-full transition-transform group-hover:scale-110 ${
                 transaction.type === 'income' 
                   ? 'bg-banking-income/10 text-banking-income' 
                   : 'bg-banking-expense/10 text-banking-expense'

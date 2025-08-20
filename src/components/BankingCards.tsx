@@ -23,26 +23,27 @@ const cards = [
 
 export const BankingCards = () => {
   return (
-    <Card className="p-6 shadow-card bg-gradient-card">
+    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-semibold">My Cards</h2>
-        <Button variant="ghost" size="sm" className="text-banking-primary">
+        <Button variant="ghost" size="sm" className="text-banking-primary hover:scale-105 transition-transform">
           <MoreHorizontal size={16} />
         </Button>
       </div>
       
       <div className="space-y-4">
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <div
             key={card.id}
-            className={`${card.color} text-white p-4 rounded-xl relative overflow-hidden`}
+            className={`${card.color} text-white p-4 rounded-xl relative overflow-hidden transition-all duration-200 hover:scale-105 hover:shadow-elevated cursor-pointer animate-fade-in`}
+            style={{animationDelay: `${index * 150}ms`}}
           >
             <div className="flex justify-between items-start mb-8">
               <div>
                 <p className="text-white/80 text-sm">{card.name}</p>
                 <p className="text-white/60 text-xs">{card.type}</p>
               </div>
-              <CreditCard className="text-white/60" size={24} />
+              <CreditCard className="text-white/60 transition-transform hover:scale-110" size={24} />
             </div>
             
             <div className="flex justify-between items-end">

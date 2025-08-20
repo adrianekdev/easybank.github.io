@@ -2,35 +2,40 @@ import { AccountBalance } from "@/components/AccountBalance";
 import { QuickActions } from "@/components/QuickActions";
 import { RecentTransactions } from "@/components/RecentTransactions";
 import { BankingCards } from "@/components/BankingCards";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Bell, Search, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background transition-colors duration-300">
+      <Toaster />
       {/* Header */}
-      <header className="bg-card shadow-card border-b">
+      <header className="bg-card shadow-card border-b backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <h1 className="text-xl font-bold text-banking-primary">NextBank</h1>
+              <h1 className="text-xl font-bold text-banking-primary animate-scale-in">NextBank</h1>
             </div>
             
             <div className="flex items-center gap-4">
               <div className="relative hidden md:block">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={16} />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground transition-colors" size={16} />
                 <Input 
                   placeholder="Search transactions..." 
-                  className="pl-10 w-64"
+                  className="pl-10 w-64 transition-all duration-200 focus:w-72"
                 />
               </div>
               
-              <Button variant="ghost" size="sm">
+              <Button variant="ghost" size="sm" className="hover:scale-110 transition-transform">
                 <Bell size={20} />
               </Button>
               
-              <Button variant="ghost" size="sm">
+              <ThemeToggle />
+              
+              <Button variant="ghost" size="sm" className="hover:scale-110 transition-transform">
                 <User size={20} />
               </Button>
             </div>
@@ -40,8 +45,8 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-2">Good morning, Sarah!</h2>
+        <div className="mb-8 animate-fade-in">
+          <h2 className="text-2xl font-bold mb-2">Good morning, Sarah! ☀️</h2>
           <p className="text-muted-foreground">Here's your financial overview for today.</p>
         </div>
 
