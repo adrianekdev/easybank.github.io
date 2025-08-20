@@ -6,7 +6,7 @@ const transactions = [
   {
     id: 1,
     type: "income",
-    description: "Salary Deposit",
+    description: "Lua Project",
     amount: "+$4,200.00",
     date: "Today",
     category: "Salary",
@@ -15,16 +15,16 @@ const transactions = [
   {
     id: 2,
     type: "expense",
-    description: "Grocery Store",
+    description: "Luarmor Obfuscator",
     amount: "-$127.50",
     date: "Yesterday",
-    category: "Food",
+    category: "Utilities",
     icon: ArrowUpRight
   },
   {
     id: 3,
     type: "expense",
-    description: "Electric Bill",
+    description: "Github Enterprise",
     amount: "-$89.20",
     date: "Dec 18",
     category: "Utilities",
@@ -32,7 +32,7 @@ const transactions = [
   },
   {
     id: 4,
-    type: "income",
+    type: "CSrin",
     description: "Freelance Payment",
     amount: "+$850.00",
     date: "Dec 17",
@@ -42,7 +42,7 @@ const transactions = [
   {
     id: 5,
     type: "expense",
-    description: "Coffee Shop",
+    description: "Biedronka",
     amount: "-$12.40",
     date: "Dec 17",
     category: "Food",
