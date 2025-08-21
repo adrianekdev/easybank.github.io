@@ -27,6 +27,10 @@ const Index = () => {
     subtractFromBalance(amount);
   };
 
+  const handlePurchase = (amount: number) => {
+    subtractFromBalance(amount);
+  };
+
   return (
     <div className="min-h-screen bg-background transition-colors duration-300">
       <Toaster />
@@ -72,7 +76,7 @@ const Index = () => {
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
             <AccountBalance balance={balance} formatBalance={formatBalance} />
-            <QuickActions onSendMoney={handleSendMoney} onCryptoInvest={handleCryptoInvest} onPayBill={handlePayBill} />
+            <QuickActions onSendMoney={handleSendMoney} onCryptoInvest={handleCryptoInvest} onPayBill={handlePayBill} onPurchase={handlePurchase} />
             <RecentTransactions />
           </div>
           
