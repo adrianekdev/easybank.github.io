@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const transactions = [
+  // Today - 3 income transactions
   {
     id: 1,
     type: "income",
@@ -14,6 +15,24 @@ const transactions = [
   },
   {
     id: 2,
+    type: "income",
+    description: "C# Automation Tool Sale",
+    amount: "+$1,850.00",
+    date: "Today",
+    category: "Software Sales",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 3,
+    type: "income",
+    description: "API Integration Service",
+    amount: "+$950.00",
+    date: "Today",
+    category: "Development",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 4,
     type: "expense",
     description: "Luarmor Obfuscator Pro",
     amount: "-$127.50",
@@ -21,8 +40,36 @@ const transactions = [
     category: "Dev Tools",
     icon: ArrowUpRight
   },
+  // Yesterday - 3 income transactions
   {
-    id: 3,
+    id: 5,
+    type: "income",
+    description: "Python Bot Framework",
+    amount: "+$2,100.00",
+    date: "Yesterday",
+    category: "Development",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 6,
+    type: "income",
+    description: "Roblox Script Hub Revenue",
+    amount: "+$1,650.00",
+    date: "Yesterday",
+    category: "Scripts",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 7,
+    type: "income",
+    description: "Discord Bot Commission",
+    amount: "+$750.00",
+    date: "Yesterday",
+    category: "Development",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 8,
     type: "expense",
     description: "GitHub Copilot Enterprise",
     amount: "-$89.20",
@@ -30,120 +77,77 @@ const transactions = [
     category: "AI Tools",
     icon: ArrowUpRight
   },
+  // Dec 18 - 3 income transactions
   {
-    id: 4,
+    id: 9,
     type: "income",
     description: "C++ Performance Optimization",
-    amount: "+$850.00",
-    date: "Dec 17",
+    amount: "+$3,200.00",
+    date: "Dec 18",
     category: "Freelance",
     icon: ArrowDownLeft
   },
   {
-    id: 5,
-    type: "expense",
-    description: "C# Advanced Decompiler",
-    amount: "-$245.30",
-    date: "Dec 16",
-    category: "Dev Tools",
-    icon: ArrowUpRight
-  },
-  {
-    id: 6,
-    type: "income",
-    description: "Roblox Script Hub Sale",
-    amount: "+$1,250.00",
-    date: "Dec 15",
-    category: "Scripts",
-    icon: ArrowDownLeft
-  },
-  {
-    id: 7,
-    type: "expense",
-    description: "JetBrains All Products Pack",
-    amount: "-$649.00",
-    date: "Dec 14",
-    category: "IDE",
-    icon: ArrowUpRight
-  },
-  {
-    id: 8,
-    type: "income",
-    description: "Python Automation Bot",
-    amount: "+$2,100.00",
-    date: "Dec 13",
-    category: "Development",
-    icon: ArrowDownLeft
-  },
-  {
-    id: 9,
-    type: "expense",
-    description: "VMware Workstation Pro",
-    amount: "-$199.99",
-    date: "Dec 12",
-    category: "Virtualization",
-    icon: ArrowUpRight
-  },
-  {
     id: 10,
     type: "income",
-    description: "Discord Bot Framework",
-    amount: "+$750.00",
-    date: "Dec 11",
-    category: "Development",
-    icon: ArrowDownLeft
-  },
-  {
-    id: 11,
-    type: "expense",
-    description: "Malware Analysis Sandbox",
-    amount: "-$299.99",
-    date: "Dec 10",
-    category: "Security Tools",
-    icon: ArrowUpRight
-  },
-  {
-    id: 12,
-    type: "income",
-    description: "React Component Library",
-    amount: "+$1,800.00",
-    date: "Dec 9",
+    description: "React Dashboard Template",
+    amount: "+$890.00",
+    date: "Dec 18",
     category: "Frontend",
     icon: ArrowDownLeft
   },
   {
-    id: 13,
-    type: "expense",
-    description: "Burp Suite Professional",
-    amount: "-$399.00",
-    date: "Dec 8",
-    category: "Penetration Testing",
-    icon: ArrowUpRight
-  },
-  {
-    id: 14,
+    id: 11,
     type: "income",
-    description: "Minecraft Plugin Development",
-    amount: "+$950.00",
-    date: "Dec 7",
+    description: "Minecraft Plugin Sales",
+    amount: "+$1,250.00",
+    date: "Dec 18",
     category: "Game Development",
     icon: ArrowDownLeft
   },
   {
-    id: 15,
+    id: 12,
     type: "expense",
-    description: "IDA Pro License",
-    amount: "-$1,879.00",
-    date: "Dec 6",
-    category: "Reverse Engineering",
+    description: "C# Advanced Decompiler",
+    amount: "-$245.30",
+    date: "Dec 17",
+    category: "Dev Tools",
     icon: ArrowUpRight
+  },
+  // Dec 17 - 3 income transactions
+  {
+    id: 13,
+    type: "income",
+    description: "Web Scraping Service",
+    amount: "+$1,800.00",
+    date: "Dec 17",
+    category: "Development",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 14,
+    type: "income",
+    description: "Node.js Microservice",
+    amount: "+$2,400.00",
+    date: "Dec 17",
+    category: "Backend",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 15,
+    type: "income",
+    description: "Trading Bot Algorithm",
+    amount: "+$5,500.00",
+    date: "Dec 17",
+    category: "FinTech",
+    icon: ArrowDownLeft
   }
 ];
 
 export const RecentTransactions = () => {
   return (
-    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in">
-      <div className="flex justify-between items-center mb-4">
+    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in border-0 backdrop-blur-sm">
+      <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg font-semibold">Recent Transactions</h2>
         <Button variant="ghost" size="sm" className="text-banking-primary hover:scale-105 transition-transform">
           View All

@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { SendMoneyModal } from "@/components/SendMoneyModal";
 import { RequestMoneyModal } from "@/components/RequestMoneyModal";
 import { CryptoInvestModal } from "@/components/CryptoInvestModal";
+import { PayBillsModal } from "@/components/PayBillsModal";
 
 const staticActions = [
   {
@@ -16,27 +17,18 @@ const staticActions = [
 interface QuickActionsProps {
   onSendMoney: (amount: number) => void;
   onCryptoInvest: (investAmount: number, result: number) => void;
+  onPayBill: (amount: number) => void;
 }
 
-export const QuickActions = ({ onSendMoney, onCryptoInvest }: QuickActionsProps) => {
+export const QuickActions = ({ onSendMoney, onCryptoInvest, onPayBill }: QuickActionsProps) => {
   return (
-    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in">
-      <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
+    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in border-0 backdrop-blur-sm">
+      <h2 className="text-lg font-semibold mb-6 text-foreground">Quick Actions</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <SendMoneyModal onSendMoney={onSendMoney} />
         <RequestMoneyModal />
         <CryptoInvestModal onInvest={onCryptoInvest} />
-        {staticActions.map((action, index) => (
-          <button
-            key={index}
-            className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-muted/50 transition-all duration-200 hover:scale-105 group"
-          >
-            <div className={`p-3 rounded-full ${action.bg} group-hover:animate-pulse-glow`}>
-              <action.icon className={`w-5 h-5 ${action.color}`} />
-            </div>
-            <span className="text-sm font-medium">{action.label}</span>
-          </button>
-        ))}
+        <PayBillsModal onPayBill={onPayBill} />
       </div>
     </Card>
   );

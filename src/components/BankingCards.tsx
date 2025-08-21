@@ -8,7 +8,7 @@ const cards = [
     name: "Premium Card",
     number: "**** **** **** 3521",
     type: "Debit",
-    balance: "$8,430.00",
+    balance: "$25,430.00",
     color: "bg-gradient-primary"
   },
   {
@@ -16,7 +16,7 @@ const cards = [
     name: "Business Card",
     number: "**** **** **** 7892",
     type: "Credit",
-    balance: "$2,150.00",
+    balance: "$14,817.83",
     color: "bg-gradient-success"
   }
 ];
