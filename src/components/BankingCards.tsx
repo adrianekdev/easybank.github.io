@@ -5,19 +5,27 @@ import { Button } from "@/components/ui/button";
 const cards = [
   {
     id: 1,
-    name: "Premium Card",
-    number: "**** **** **** 3521",
-    type: "Debit",
-    balance: "$25,430.00",
-    color: "bg-gradient-primary"
+    name: "Apple Pay Card 🍎",
+    number: "**** **** **** 1847",
+    type: "Digital",
+    balance: "$25,000.00",
+    color: "bg-gradient-to-br from-gray-900 via-black to-gray-800"
   },
   {
     id: 2,
-    name: "Business Card",
-    number: "**** **** **** 7892",
+    name: "Business Card 💼",
+    number: "**** **** **** 5629",
     type: "Credit",
-    balance: "$14,817.83",
-    color: "bg-gradient-success"
+    balance: "$7,247.83",
+    color: "bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800"
+  },
+  {
+    id: 3,
+    name: "Premium Card 💎",
+    number: "**** **** **** 9384",
+    type: "Debit",
+    balance: "$8,000.00",
+    color: "bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600"
   }
 ];
 

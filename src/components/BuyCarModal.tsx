@@ -12,6 +12,11 @@ import rangeRover from "@/assets/range-rover.jpg";
 import tesla from "@/assets/tesla.jpg";
 import motorcycle from "@/assets/motorcycle.jpg";
 import helicopter from "@/assets/helicopter.jpg";
+import porsche from "@/assets/porsche.jpg";
+import mclaren from "@/assets/mclaren.jpg";
+import mercedes from "@/assets/mercedes.jpg";
+import audi from "@/assets/audi.jpg";
+import corvette from "@/assets/corvette.jpg";
 
 interface BuyCarModalProps {
   onPurchase: (amount: number) => void;
@@ -21,23 +26,23 @@ const vehicles = [
   // Sports Cars
   { id: 1, name: "BMW M4 Competition", price: 75000, image: bmwM4, specs: "473 HP • 0-60 in 3.8s • Twin Turbo" },
   { id: 2, name: "Ferrari F8 Tributo", price: 280000, image: ferrari, specs: "710 HP • 0-60 in 2.9s • V8 Twin Turbo" },
-  { id: 3, name: "Porsche 911 Turbo S", price: 220000, image: lamborghini, specs: "640 HP • 0-60 in 2.6s • AWD" },
-  { id: 4, name: "McLaren 720S", price: 300000, image: ferrari, specs: "710 HP • 0-60 in 2.8s • Carbon Fiber" },
+  { id: 3, name: "Porsche 911 Turbo S", price: 220000, image: porsche, specs: "640 HP • 0-60 in 2.6s • AWD" },
+  { id: 4, name: "McLaren 720S", price: 300000, image: mclaren, specs: "710 HP • 0-60 in 2.8s • Carbon Fiber" },
   { id: 5, name: "Lamborghini Huracán", price: 250000, image: lamborghini, specs: "630 HP • 0-60 in 2.9s • V10 Engine" },
-  { id: 6, name: "Audi R8 V10", price: 180000, image: bmwM4, specs: "562 HP • 0-60 in 3.2s • Quattro AWD" },
-  { id: 7, name: "Mercedes AMG GT", price: 160000, image: ferrari, specs: "523 HP • 0-60 in 3.5s • Biturbo V8" },
-  { id: 8, name: "Corvette Z06", price: 110000, image: lamborghini, specs: "670 HP • 0-60 in 2.6s • Supercharged" },
+  { id: 6, name: "Audi R8 V10", price: 180000, image: audi, specs: "562 HP • 0-60 in 3.2s • Quattro AWD" },
+  { id: 7, name: "Mercedes AMG GT", price: 160000, image: mercedes, specs: "523 HP • 0-60 in 3.5s • Biturbo V8" },
+  { id: 8, name: "Corvette Z06", price: 110000, image: corvette, specs: "670 HP • 0-60 in 2.6s • Supercharged" },
   { id: 9, name: "Nissan GT-R", price: 120000, image: bmwM4, specs: "565 HP • 0-60 in 2.9s • AWD Twin Turbo" },
-  { id: 10, name: "Dodge Viper", price: 95000, image: ferrari, specs: "645 HP • 0-60 in 3.5s • V10 Engine" },
+  { id: 10, name: "Dodge Viper", price: 95000, image: corvette, specs: "645 HP • 0-60 in 3.5s • V10 Engine" },
   
   // Luxury Cars
   { id: 11, name: "Rolls Royce Phantom", price: 460000, image: rollsRoyce, specs: "563 HP • Ultra Luxury • V12 Engine" },
   { id: 12, name: "Bentley Continental GT", price: 230000, image: rollsRoyce, specs: "626 HP • Luxury Coupe • W12 Engine" },
-  { id: 13, name: "Mercedes S-Class", price: 110000, image: rollsRoyce, specs: "429 HP • Executive • Air Suspension" },
+  { id: 13, name: "Mercedes S-Class", price: 110000, image: mercedes, specs: "429 HP • Executive • Air Suspension" },
   { id: 14, name: "BMW 7 Series", price: 95000, image: bmwM4, specs: "523 HP • Technology • Comfort" },
-  { id: 15, name: "Audi A8", price: 87000, image: rollsRoyce, specs: "453 HP • Quattro • Matrix LED" },
+  { id: 15, name: "Audi A8", price: 87000, image: audi, specs: "453 HP • Quattro • Matrix LED" },
   { id: 16, name: "Lexus LS", price: 78000, image: rollsRoyce, specs: "416 HP • Hybrid • Luxury" },
-  { id: 17, name: "Genesis G90", price: 75000, image: rollsRoyce, specs: "420 HP • Value Luxury • V8" },
+  { id: 17, name: "Genesis G90", price: 75000, image: mercedes, specs: "420 HP • Value Luxury • V8" },
   { id: 18, name: "Cadillac CT6", price: 65000, image: rollsRoyce, specs: "404 HP • American Luxury • V8" },
   { id: 19, name: "Jaguar XJ", price: 85000, image: rollsRoyce, specs: "470 HP • British Luxury • Supercharged" },
   { id: 20, name: "Maserati Quattroporte", price: 110000, image: ferrari, specs: "424 HP • Italian Style • V8" },
@@ -55,14 +60,14 @@ const vehicles = [
   { id: 30, name: "Acura MDX", price: 55000, image: rangeRover, specs: "321 HP • Reliability • V6 Engine" },
   
   // Hypercars
-  { id: 31, name: "Bugatti Chiron", price: 3000000, image: lamborghini, specs: "1479 HP • 261 mph • Quad Turbo W16" },
-  { id: 32, name: "Koenigsegg Regera", price: 2000000, image: ferrari, specs: "1500 HP • Hybrid • Carbon Fiber" },
-  { id: 33, name: "McLaren P1", price: 1500000, image: lamborghini, specs: "903 HP • Hybrid • Track Focused" },
+  { id: 31, name: "Bugatti Chiron", price: 3000000, image: mclaren, specs: "1479 HP • 261 mph • Quad Turbo W16" },
+  { id: 32, name: "Koenigsegg Regera", price: 2000000, image: lamborghini, specs: "1500 HP • Hybrid • Carbon Fiber" },
+  { id: 33, name: "McLaren P1", price: 1500000, image: mclaren, specs: "903 HP • Hybrid • Track Focused" },
   { id: 34, name: "Ferrari LaFerrari", price: 1800000, image: ferrari, specs: "950 HP • Hybrid • Limited Edition" },
-  { id: 35, name: "Porsche 918 Spyder", price: 1200000, image: lamborghini, specs: "887 HP • Hybrid • Weissach Package" },
-  { id: 36, name: "Pagani Huayra", price: 2800000, image: ferrari, specs: "730 HP • Art on Wheels • AMG V12" },
+  { id: 35, name: "Porsche 918 Spyder", price: 1200000, image: porsche, specs: "887 HP • Hybrid • Weissach Package" },
+  { id: 36, name: "Pagani Huayra", price: 2800000, image: mclaren, specs: "730 HP • Art on Wheels • AMG V12" },
   { id: 37, name: "Lamborghini Sián", price: 3600000, image: lamborghini, specs: "819 HP • Hybrid • Supercapacitor" },
-  { id: 38, name: "Aston Martin Valkyrie", price: 3200000, image: ferrari, specs: "1160 HP • F1 Tech • Hybrid V12" },
+  { id: 38, name: "Aston Martin Valkyrie", price: 3200000, image: mclaren, specs: "1160 HP • F1 Tech • Hybrid V12" },
   
   // Electric Cars
   { id: 39, name: "Tesla Model S Plaid", price: 130000, image: tesla, specs: "1020 HP • 0-60 in 1.9s • Electric" },
