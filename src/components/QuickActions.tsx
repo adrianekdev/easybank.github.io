@@ -27,8 +27,8 @@ interface QuickActionsProps {
 
 export const QuickActions = ({ onSendMoney, onCryptoInvest, onPayBill, onPurchase, onGamble }: QuickActionsProps) => {
   return (
-    <Card className="p-8 shadow-elevated bg-gradient-card animate-fade-in border-primary/20 backdrop-blur-xl">
-      <h2 className="text-xl font-bold mb-8 text-foreground bg-gradient-primary bg-clip-text text-transparent">Quick Actions</h2>
+    <Card className="p-8 shadow-2xl bg-white/10 backdrop-blur-xl animate-fade-in border border-white/20 hover:bg-white/15 transition-all duration-300">
+      <h2 className="text-xl font-bold mb-8 text-white drop-shadow-lg">Quick Actions</h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
         <SendMoneyModal onSendMoney={onSendMoney} />
         <RequestMoneyModal />

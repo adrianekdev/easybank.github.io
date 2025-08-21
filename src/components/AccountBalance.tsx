@@ -12,7 +12,7 @@ export const AccountBalance = ({ balance, formatBalance }: AccountBalanceProps) 
   const [isVisible, setIsVisible] = useState(true);
 
   return (
-    <Card className="bg-gradient-primary text-white p-6 shadow-elevated border-0 animate-fade-in">
+    <Card className="bg-white/10 backdrop-blur-xl text-white p-6 shadow-2xl border border-white/20 animate-fade-in hover:bg-white/15 transition-all duration-300">
       <div className="flex justify-between items-start mb-4">
         <div>
           <p className="text-white/80 text-sm">Total Balance</p>
@@ -24,7 +24,7 @@ export const AccountBalance = ({ balance, formatBalance }: AccountBalanceProps) 
               variant="ghost"
               size="sm"
               onClick={() => setIsVisible(!isVisible)}
-              className="text-white/80 hover:text-white hover:bg-white/10 p-1 h-auto transition-all duration-200 hover:scale-110"
+              className="text-white/80 hover:text-white hover:bg-white/20 p-1 h-auto transition-all duration-200 hover:scale-110 backdrop-blur-sm"
             >
               {isVisible ? <EyeOff size={16} /> : <Eye size={16} />}
             </Button>

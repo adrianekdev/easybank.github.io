@@ -31,10 +31,10 @@ const cards = [
 
 export const BankingCards = () => {
   return (
-    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in">
+    <Card className="p-6 shadow-2xl bg-white/10 backdrop-blur-xl animate-fade-in border border-white/20 hover:bg-white/15 transition-all duration-300">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold">My Cards</h2>
-        <Button variant="ghost" size="sm" className="text-banking-primary hover:scale-105 transition-transform">
+        <h2 className="text-lg font-semibold text-white drop-shadow-sm">My Cards</h2>
+        <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/20 hover:scale-105 transition-all backdrop-blur-sm">
           <MoreHorizontal size={16} />
         </Button>
       </div>
@@ -43,7 +43,7 @@ export const BankingCards = () => {
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className={`${card.color} text-white p-4 rounded-xl relative overflow-hidden transition-all duration-200 hover:scale-105 hover:shadow-elevated cursor-pointer animate-fade-in`}
+            className={`${card.color} text-white p-4 rounded-xl relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer animate-fade-in backdrop-blur-sm border border-white/20`}
             style={{animationDelay: `${index * 150}ms`}}
           >
             <div className="flex justify-between items-start mb-8">
