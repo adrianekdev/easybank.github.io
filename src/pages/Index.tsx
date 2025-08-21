@@ -3,12 +3,26 @@ import { QuickActions } from "@/components/QuickActions";
 import { RecentTransactions } from "@/components/RecentTransactions";
 import { BankingCards } from "@/components/BankingCards";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useBalance } from "@/hooks/useBalance";
 import { Bell, Search, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
+  const { balance, formatBalance, subtractFromBalance, addToBalance } = useBalance();
+
+  const handleSendMoney = (amount: number) => {
+    subtractFromBalance(amount);
+  };
+
+  const handleCryptoInvest = (investAmount: number, result: number) => {
+    subtractFromBalance(investAmount);
+    if (result > 0) {
+      addToBalance(result);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background transition-colors duration-300">
       <Toaster />
@@ -53,8 +67,8 @@ const Index = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-6">
-            <AccountBalance />
-            <QuickActions />
+            <AccountBalance balance={balance} formatBalance={formatBalance} />
+            <QuickActions onSendMoney={handleSendMoney} onCryptoInvest={handleCryptoInvest} />
             <RecentTransactions />
           </div>
           

@@ -3,7 +3,12 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-export const AccountBalance = () => {
+interface AccountBalanceProps {
+  balance: number;
+  formatBalance: (amount: number) => string;
+}
+
+export const AccountBalance = ({ balance, formatBalance }: AccountBalanceProps) => {
   const [isVisible, setIsVisible] = useState(true);
 
   return (
@@ -13,7 +18,7 @@ export const AccountBalance = () => {
           <p className="text-white/80 text-sm">Total Balance</p>
           <div className="flex items-center gap-3">
             <h1 className="text-3xl font-bold animate-scale-in">
-              {isVisible ? "$24,387.52" : "••••••"}
+              {isVisible ? formatBalance(balance) : "••••••"}
             </h1>
             <Button
               variant="ghost"

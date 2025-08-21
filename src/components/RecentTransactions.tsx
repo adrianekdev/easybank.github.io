@@ -6,47 +6,56 @@ const transactions = [
   {
     id: 1,
     type: "income",
-    description: "Lua Project",
+    description: "Lua Script Commission",
     amount: "+$4,200.00",
     date: "Today",
-    category: "Salary",
+    category: "Development",
     icon: ArrowDownLeft
   },
   {
     id: 2,
     type: "expense",
-    description: "Luarmor Obfuscator",
+    description: "Luarmor Obfuscator Pro",
     amount: "-$127.50",
     date: "Yesterday",
-    category: "Utilities",
+    category: "Dev Tools",
     icon: ArrowUpRight
   },
   {
     id: 3,
     type: "expense",
-    description: "Github Enterprise",
+    description: "GitHub Copilot Enterprise",
     amount: "-$89.20",
     date: "Dec 18",
-    category: "Utilities",
+    category: "AI Tools",
     icon: ArrowUpRight
   },
   {
     id: 4,
-    type: "CSrin",
-    description: "Freelance Payment",
+    type: "income",
+    description: "C++ Performance Optimization",
     amount: "+$850.00",
     date: "Dec 17",
-    category: "Income",
+    category: "Freelance",
     icon: ArrowDownLeft
   },
   {
     id: 5,
     type: "expense",
-    description: "Biedronka",
-    amount: "-$12.40",
-    date: "Dec 17",
-    category: "Food",
+    description: "C# Advanced Decompiler",
+    amount: "-$245.30",
+    date: "Dec 16",
+    category: "Dev Tools",
     icon: ArrowUpRight
+  },
+  {
+    id: 6,
+    type: "income",
+    description: "Roblox Script Hub Sale",
+    amount: "+$1,250.00",
+    date: "Dec 15",
+    category: "Scripts",
+    icon: ArrowDownLeft
   }
 ];
 

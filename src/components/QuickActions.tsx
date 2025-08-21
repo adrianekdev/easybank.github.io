@@ -2,6 +2,7 @@ import { CreditCard, PiggyBank } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { SendMoneyModal } from "@/components/SendMoneyModal";
 import { RequestMoneyModal } from "@/components/RequestMoneyModal";
+import { CryptoInvestModal } from "@/components/CryptoInvestModal";
 
 const staticActions = [
   {
@@ -18,13 +19,19 @@ const staticActions = [
   }
 ];
 
-export const QuickActions = () => {
+interface QuickActionsProps {
+  onSendMoney: (amount: number) => void;
+  onCryptoInvest: (investAmount: number, result: number) => void;
+}
+
+export const QuickActions = ({ onSendMoney, onCryptoInvest }: QuickActionsProps) => {
   return (
     <Card className="p-6 shadow-card bg-gradient-card animate-fade-in">
       <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <SendMoneyModal />
+        <SendMoneyModal onSendMoney={onSendMoney} />
         <RequestMoneyModal />
+        <CryptoInvestModal onInvest={onCryptoInvest} />
         {staticActions.map((action, index) => (
           <button
             key={index}

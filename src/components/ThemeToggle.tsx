@@ -1,9 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
+
+  // Set dark theme by default on mount
+  React.useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
