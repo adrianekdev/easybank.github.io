@@ -146,35 +146,35 @@ const transactions = [
 
 export const RecentTransactions = () => {
   return (
-    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in border-0 backdrop-blur-sm">
+    <Card className="p-6 shadow-2xl bg-white/10 backdrop-blur-xl animate-fade-in border border-white/20 hover:bg-white/15 transition-all duration-300">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg font-semibold">Recent Transactions</h2>
-        <Button variant="ghost" size="sm" className="text-banking-primary hover:scale-105 transition-transform">
+        <h2 className="text-lg font-semibold text-white drop-shadow-sm">Recent Transactions</h2>
+        <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/20 hover:scale-105 transition-all backdrop-blur-sm">
           View All
         </Button>
       </div>
       
       <div className="space-y-3">
         {transactions.map((transaction, index) => (
-          <div key={transaction.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/30 transition-all duration-200 hover:scale-[1.02] group animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
+          <div key={transaction.id} className="flex items-center justify-between p-3 rounded-lg hover:bg-white/10 transition-all duration-200 hover:scale-[1.02] group animate-fade-in backdrop-blur-sm border border-white/10" style={{animationDelay: `${index * 100}ms`}}>
             <div className="flex items-center gap-3">
-              <div className={`p-2 rounded-full transition-transform group-hover:scale-110 ${
+              <div className={`p-2 rounded-full transition-transform group-hover:scale-110 backdrop-blur-sm ${
                 transaction.type === 'income' 
-                  ? 'bg-banking-income/10 text-banking-income' 
-                  : 'bg-banking-expense/10 text-banking-expense'
+                  ? 'bg-green-500/20 text-green-300' 
+                  : 'bg-red-500/20 text-red-300'
               }`}>
                 <transaction.icon size={16} />
               </div>
               <div>
-                <p className="font-medium text-sm">{transaction.description}</p>
-                <p className="text-xs text-muted-foreground">{transaction.category} • {transaction.date}</p>
+                <p className="font-medium text-sm text-white">{transaction.description}</p>
+                <p className="text-xs text-white/60">{transaction.category} • {transaction.date}</p>
               </div>
             </div>
             <div className="text-right">
               <p className={`font-semibold ${
                 transaction.type === 'income' 
-                  ? 'text-banking-income' 
-                  : 'text-banking-expense'
+                  ? 'text-green-300' 
+                  : 'text-red-300'
               }`}>
                 {transaction.amount}
               </p>
