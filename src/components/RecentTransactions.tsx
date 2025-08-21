@@ -56,6 +56,87 @@ const transactions = [
     date: "Dec 15",
     category: "Scripts",
     icon: ArrowDownLeft
+  },
+  {
+    id: 7,
+    type: "expense",
+    description: "JetBrains All Products Pack",
+    amount: "-$649.00",
+    date: "Dec 14",
+    category: "IDE",
+    icon: ArrowUpRight
+  },
+  {
+    id: 8,
+    type: "income",
+    description: "Python Automation Bot",
+    amount: "+$2,100.00",
+    date: "Dec 13",
+    category: "Development",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 9,
+    type: "expense",
+    description: "VMware Workstation Pro",
+    amount: "-$199.99",
+    date: "Dec 12",
+    category: "Virtualization",
+    icon: ArrowUpRight
+  },
+  {
+    id: 10,
+    type: "income",
+    description: "Discord Bot Framework",
+    amount: "+$750.00",
+    date: "Dec 11",
+    category: "Development",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 11,
+    type: "expense",
+    description: "Malware Analysis Sandbox",
+    amount: "-$299.99",
+    date: "Dec 10",
+    category: "Security Tools",
+    icon: ArrowUpRight
+  },
+  {
+    id: 12,
+    type: "income",
+    description: "React Component Library",
+    amount: "+$1,800.00",
+    date: "Dec 9",
+    category: "Frontend",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 13,
+    type: "expense",
+    description: "Burp Suite Professional",
+    amount: "-$399.00",
+    date: "Dec 8",
+    category: "Penetration Testing",
+    icon: ArrowUpRight
+  },
+  {
+    id: 14,
+    type: "income",
+    description: "Minecraft Plugin Development",
+    amount: "+$950.00",
+    date: "Dec 7",
+    category: "Game Development",
+    icon: ArrowDownLeft
+  },
+  {
+    id: 15,
+    type: "expense",
+    description: "IDA Pro License",
+    amount: "-$1,879.00",
+    date: "Dec 6",
+    category: "Reverse Engineering",
+    icon: ArrowUpRight
   }
 ];
 
