@@ -10,12 +10,6 @@ const staticActions = [
     label: "Pay Bills",
     color: "text-banking-expense",
     bg: "bg-banking-expense/10"
-  },
-  {
-    icon: PiggyBank,
-    label: "Save",
-    color: "text-banking-income",
-    bg: "bg-banking-income/10"
   }
 ];
 

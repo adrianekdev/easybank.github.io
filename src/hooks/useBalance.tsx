@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useBalance = () => {
-  const [balance, setBalance] = useState(24387.52);
+  const [balance, setBalance] = useState(30247.83);
 
   const subtractFromBalance = (amount: number) => {
     setBalance(prev => Math.max(0, prev - amount));
