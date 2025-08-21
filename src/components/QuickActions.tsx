@@ -6,6 +6,7 @@ import { CryptoInvestModal } from "@/components/CryptoInvestModal";
 import { PayBillsModal } from "@/components/PayBillsModal";
 import { BuyCarModal } from "@/components/BuyCarModal";
 import { BuyHouseModal } from "@/components/BuyHouseModal";
+import { GamblingModal } from "@/components/GamblingModal";
 
 const staticActions = [
   {
@@ -21,19 +22,21 @@ interface QuickActionsProps {
   onCryptoInvest: (investAmount: number, result: number) => void;
   onPayBill: (amount: number) => void;
   onPurchase: (amount: number) => void;
+  onGamble: (betAmount: number, result: number) => void;
 }
 
-export const QuickActions = ({ onSendMoney, onCryptoInvest, onPayBill, onPurchase }: QuickActionsProps) => {
+export const QuickActions = ({ onSendMoney, onCryptoInvest, onPayBill, onPurchase, onGamble }: QuickActionsProps) => {
   return (
     <Card className="p-8 shadow-elevated bg-gradient-card animate-fade-in border-primary/20 backdrop-blur-xl">
       <h2 className="text-xl font-bold mb-8 text-foreground bg-gradient-primary bg-clip-text text-transparent">Quick Actions</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
         <SendMoneyModal onSendMoney={onSendMoney} />
         <RequestMoneyModal />
         <CryptoInvestModal onInvest={onCryptoInvest} />
         <PayBillsModal onPayBill={onPayBill} />
         <BuyCarModal onPurchase={onPurchase} />
         <BuyHouseModal onPurchase={onPurchase} />
+        <GamblingModal onGamble={onGamble} />
       </div>
     </Card>
   );
