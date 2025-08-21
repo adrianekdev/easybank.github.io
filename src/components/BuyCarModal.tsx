@@ -6,6 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import bmwM4 from "@/assets/bmw-m4.jpg";
 import ferrari from "@/assets/ferrari.jpg";
+import lamborghini from "@/assets/lamborghini.jpg";
+import rollsRoyce from "@/assets/rolls-royce.jpg";
+import rangeRover from "@/assets/range-rover.jpg";
+import tesla from "@/assets/tesla.jpg";
+import motorcycle from "@/assets/motorcycle.jpg";
 import helicopter from "@/assets/helicopter.jpg";
 
 interface BuyCarModalProps {
@@ -16,64 +21,64 @@ const vehicles = [
   // Sports Cars
   { id: 1, name: "BMW M4 Competition", price: 75000, image: bmwM4, specs: "473 HP • 0-60 in 3.8s • Twin Turbo" },
   { id: 2, name: "Ferrari F8 Tributo", price: 280000, image: ferrari, specs: "710 HP • 0-60 in 2.9s • V8 Twin Turbo" },
-  { id: 3, name: "Porsche 911 Turbo S", price: 220000, image: bmwM4, specs: "640 HP • 0-60 in 2.6s • AWD" },
+  { id: 3, name: "Porsche 911 Turbo S", price: 220000, image: lamborghini, specs: "640 HP • 0-60 in 2.6s • AWD" },
   { id: 4, name: "McLaren 720S", price: 300000, image: ferrari, specs: "710 HP • 0-60 in 2.8s • Carbon Fiber" },
-  { id: 5, name: "Lamborghini Huracán", price: 250000, image: bmwM4, specs: "630 HP • 0-60 in 2.9s • V10 Engine" },
-  { id: 6, name: "Audi R8 V10", price: 180000, image: ferrari, specs: "562 HP • 0-60 in 3.2s • Quattro AWD" },
-  { id: 7, name: "Mercedes AMG GT", price: 160000, image: bmwM4, specs: "523 HP • 0-60 in 3.5s • Biturbo V8" },
-  { id: 8, name: "Corvette Z06", price: 110000, image: ferrari, specs: "670 HP • 0-60 in 2.6s • Supercharged" },
+  { id: 5, name: "Lamborghini Huracán", price: 250000, image: lamborghini, specs: "630 HP • 0-60 in 2.9s • V10 Engine" },
+  { id: 6, name: "Audi R8 V10", price: 180000, image: bmwM4, specs: "562 HP • 0-60 in 3.2s • Quattro AWD" },
+  { id: 7, name: "Mercedes AMG GT", price: 160000, image: ferrari, specs: "523 HP • 0-60 in 3.5s • Biturbo V8" },
+  { id: 8, name: "Corvette Z06", price: 110000, image: lamborghini, specs: "670 HP • 0-60 in 2.6s • Supercharged" },
   { id: 9, name: "Nissan GT-R", price: 120000, image: bmwM4, specs: "565 HP • 0-60 in 2.9s • AWD Twin Turbo" },
   { id: 10, name: "Dodge Viper", price: 95000, image: ferrari, specs: "645 HP • 0-60 in 3.5s • V10 Engine" },
   
   // Luxury Cars
-  { id: 11, name: "Rolls Royce Phantom", price: 460000, image: bmwM4, specs: "563 HP • Ultra Luxury • V12 Engine" },
-  { id: 12, name: "Bentley Continental GT", price: 230000, image: ferrari, specs: "626 HP • Luxury Coupe • W12 Engine" },
-  { id: 13, name: "Mercedes S-Class", price: 110000, image: bmwM4, specs: "429 HP • Executive • Air Suspension" },
-  { id: 14, name: "BMW 7 Series", price: 95000, image: ferrari, specs: "523 HP • Technology • Comfort" },
-  { id: 15, name: "Audi A8", price: 87000, image: bmwM4, specs: "453 HP • Quattro • Matrix LED" },
-  { id: 16, name: "Lexus LS", price: 78000, image: ferrari, specs: "416 HP • Hybrid • Luxury" },
-  { id: 17, name: "Genesis G90", price: 75000, image: bmwM4, specs: "420 HP • Value Luxury • V8" },
-  { id: 18, name: "Cadillac CT6", price: 65000, image: ferrari, specs: "404 HP • American Luxury • V8" },
-  { id: 19, name: "Jaguar XJ", price: 85000, image: bmwM4, specs: "470 HP • British Luxury • Supercharged" },
+  { id: 11, name: "Rolls Royce Phantom", price: 460000, image: rollsRoyce, specs: "563 HP • Ultra Luxury • V12 Engine" },
+  { id: 12, name: "Bentley Continental GT", price: 230000, image: rollsRoyce, specs: "626 HP • Luxury Coupe • W12 Engine" },
+  { id: 13, name: "Mercedes S-Class", price: 110000, image: rollsRoyce, specs: "429 HP • Executive • Air Suspension" },
+  { id: 14, name: "BMW 7 Series", price: 95000, image: bmwM4, specs: "523 HP • Technology • Comfort" },
+  { id: 15, name: "Audi A8", price: 87000, image: rollsRoyce, specs: "453 HP • Quattro • Matrix LED" },
+  { id: 16, name: "Lexus LS", price: 78000, image: rollsRoyce, specs: "416 HP • Hybrid • Luxury" },
+  { id: 17, name: "Genesis G90", price: 75000, image: rollsRoyce, specs: "420 HP • Value Luxury • V8" },
+  { id: 18, name: "Cadillac CT6", price: 65000, image: rollsRoyce, specs: "404 HP • American Luxury • V8" },
+  { id: 19, name: "Jaguar XJ", price: 85000, image: rollsRoyce, specs: "470 HP • British Luxury • Supercharged" },
   { id: 20, name: "Maserati Quattroporte", price: 110000, image: ferrari, specs: "424 HP • Italian Style • V8" },
   
   // SUVs
-  { id: 21, name: "Range Rover Sport", price: 85000, image: bmwM4, specs: "518 HP • Off-Road • Luxury" },
-  { id: 22, name: "BMW X5 M", price: 110000, image: ferrari, specs: "617 HP • Performance SUV • Twin Turbo" },
-  { id: 23, name: "Mercedes GLE 63 AMG", price: 120000, image: bmwM4, specs: "603 HP • Performance • Biturbo V8" },
-  { id: 24, name: "Porsche Cayenne Turbo", price: 130000, image: ferrari, specs: "541 HP • Sports SUV • Twin Turbo" },
-  { id: 25, name: "Audi SQ7", price: 90000, image: bmwM4, specs: "500 HP • Diesel • Electric Supercharger" },
-  { id: 26, name: "Cadillac Escalade", price: 80000, image: ferrari, specs: "420 HP • Full Size • V8 Engine" },
-  { id: 27, name: "Lincoln Navigator", price: 75000, image: bmwM4, specs: "450 HP • Luxury • Twin Turbo V6" },
-  { id: 28, name: "Lexus LX", price: 95000, image: ferrari, specs: "383 HP • Off-Road • V8 Engine" },
-  { id: 29, name: "Infiniti QX80", price: 70000, image: bmwM4, specs: "400 HP • Family Luxury • V8" },
-  { id: 30, name: "Acura MDX", price: 55000, image: ferrari, specs: "321 HP • Reliability • V6 Engine" },
+  { id: 21, name: "Range Rover Sport", price: 85000, image: rangeRover, specs: "518 HP • Off-Road • Luxury" },
+  { id: 22, name: "BMW X5 M", price: 110000, image: rangeRover, specs: "617 HP • Performance SUV • Twin Turbo" },
+  { id: 23, name: "Mercedes GLE 63 AMG", price: 120000, image: rangeRover, specs: "603 HP • Performance • Biturbo V8" },
+  { id: 24, name: "Porsche Cayenne Turbo", price: 130000, image: rangeRover, specs: "541 HP • Sports SUV • Twin Turbo" },
+  { id: 25, name: "Audi SQ7", price: 90000, image: rangeRover, specs: "500 HP • Diesel • Electric Supercharger" },
+  { id: 26, name: "Cadillac Escalade", price: 80000, image: rangeRover, specs: "420 HP • Full Size • V8 Engine" },
+  { id: 27, name: "Lincoln Navigator", price: 75000, image: rangeRover, specs: "450 HP • Luxury • Twin Turbo V6" },
+  { id: 28, name: "Lexus LX", price: 95000, image: rangeRover, specs: "383 HP • Off-Road • V8 Engine" },
+  { id: 29, name: "Infiniti QX80", price: 70000, image: rangeRover, specs: "400 HP • Family Luxury • V8" },
+  { id: 30, name: "Acura MDX", price: 55000, image: rangeRover, specs: "321 HP • Reliability • V6 Engine" },
   
   // Hypercars
-  { id: 31, name: "Bugatti Chiron", price: 3000000, image: bmwM4, specs: "1479 HP • 261 mph • Quad Turbo W16" },
+  { id: 31, name: "Bugatti Chiron", price: 3000000, image: lamborghini, specs: "1479 HP • 261 mph • Quad Turbo W16" },
   { id: 32, name: "Koenigsegg Regera", price: 2000000, image: ferrari, specs: "1500 HP • Hybrid • Carbon Fiber" },
-  { id: 33, name: "McLaren P1", price: 1500000, image: bmwM4, specs: "903 HP • Hybrid • Track Focused" },
+  { id: 33, name: "McLaren P1", price: 1500000, image: lamborghini, specs: "903 HP • Hybrid • Track Focused" },
   { id: 34, name: "Ferrari LaFerrari", price: 1800000, image: ferrari, specs: "950 HP • Hybrid • Limited Edition" },
-  { id: 35, name: "Porsche 918 Spyder", price: 1200000, image: bmwM4, specs: "887 HP • Hybrid • Weissach Package" },
+  { id: 35, name: "Porsche 918 Spyder", price: 1200000, image: lamborghini, specs: "887 HP • Hybrid • Weissach Package" },
   { id: 36, name: "Pagani Huayra", price: 2800000, image: ferrari, specs: "730 HP • Art on Wheels • AMG V12" },
-  { id: 37, name: "Lamborghini Sián", price: 3600000, image: bmwM4, specs: "819 HP • Hybrid • Supercapacitor" },
+  { id: 37, name: "Lamborghini Sián", price: 3600000, image: lamborghini, specs: "819 HP • Hybrid • Supercapacitor" },
   { id: 38, name: "Aston Martin Valkyrie", price: 3200000, image: ferrari, specs: "1160 HP • F1 Tech • Hybrid V12" },
   
   // Electric Cars
-  { id: 39, name: "Tesla Model S Plaid", price: 130000, image: bmwM4, specs: "1020 HP • 0-60 in 1.9s • Electric" },
-  { id: 40, name: "Porsche Taycan Turbo S", price: 185000, image: ferrari, specs: "750 HP • Electric • Track Ready" },
-  { id: 41, name: "Lucid Air Dream", price: 170000, image: bmwM4, specs: "1111 HP • 516 mi Range • Luxury EV" },
-  { id: 42, name: "BMW iX M60", price: 110000, image: ferrari, specs: "610 HP • Electric SUV • Technology" },
-  { id: 43, name: "Mercedes EQS 53 AMG", price: 150000, image: bmwM4, specs: "751 HP • Electric Luxury • AMG" },
-  { id: 44, name: "Audi e-tron GT", price: 140000, image: ferrari, specs: "637 HP • Electric Sports • Quattro" },
+  { id: 39, name: "Tesla Model S Plaid", price: 130000, image: tesla, specs: "1020 HP • 0-60 in 1.9s • Electric" },
+  { id: 40, name: "Porsche Taycan Turbo S", price: 185000, image: tesla, specs: "750 HP • Electric • Track Ready" },
+  { id: 41, name: "Lucid Air Dream", price: 170000, image: tesla, specs: "1111 HP • 516 mi Range • Luxury EV" },
+  { id: 42, name: "BMW iX M60", price: 110000, image: tesla, specs: "610 HP • Electric SUV • Technology" },
+  { id: 43, name: "Mercedes EQS 53 AMG", price: 150000, image: tesla, specs: "751 HP • Electric Luxury • AMG" },
+  { id: 44, name: "Audi e-tron GT", price: 140000, image: tesla, specs: "637 HP • Electric Sports • Quattro" },
   
   // Motorcycles
-  { id: 45, name: "Ducati Panigale V4", price: 25000, image: bmwM4, specs: "214 HP • 0-60 in 2.6s • Racing DNA" },
-  { id: 46, name: "Kawasaki Ninja H2R", price: 55000, image: ferrari, specs: "310 HP • Supercharged • Track Only" },
-  { id: 47, name: "BMW S1000RR", price: 18000, image: bmwM4, specs: "205 HP • Electronic Package • Sport" },
-  { id: 48, name: "Yamaha R1M", price: 23000, image: ferrari, specs: "200 HP • MotoGP Tech • Carbon Fiber" },
-  { id: 49, name: "Honda CBR1000RR-R", price: 28000, image: bmwM4, specs: "214 HP • Fireblade • Track Ready" },
-  { id: 50, name: "Aprilia RSV4", price: 20000, image: ferrari, specs: "217 HP • V4 Engine • Racing Heritage" },
+  { id: 45, name: "Ducati Panigale V4", price: 25000, image: motorcycle, specs: "214 HP • 0-60 in 2.6s • Racing DNA" },
+  { id: 46, name: "Kawasaki Ninja H2R", price: 55000, image: motorcycle, specs: "310 HP • Supercharged • Track Only" },
+  { id: 47, name: "BMW S1000RR", price: 18000, image: motorcycle, specs: "205 HP • Electronic Package • Sport" },
+  { id: 48, name: "Yamaha R1M", price: 23000, image: motorcycle, specs: "200 HP • MotoGP Tech • Carbon Fiber" },
+  { id: 49, name: "Honda CBR1000RR-R", price: 28000, image: motorcycle, specs: "214 HP • Fireblade • Track Ready" },
+  { id: 50, name: "Aprilia RSV4", price: 20000, image: motorcycle, specs: "217 HP • V4 Engine • Racing Heritage" },
   
   // Aircraft
   { id: 51, name: "Luxury Helicopter", price: 2500000, image: helicopter, specs: "6 Passengers • 400 Mile Range • Premium Interior" },
@@ -134,33 +139,35 @@ export const BuyCarModal = ({ onPurchase }: BuyCarModalProps) => {
           <span className="text-sm font-medium text-foreground">Buy Vehicle</span>
         </div>
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-gradient-to-br from-background to-background/95 backdrop-blur-xl border-primary/20">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            Premium Vehicles
+      <DialogContent className="max-w-7xl max-h-[90vh] overflow-y-auto bg-gradient-to-br from-background via-background/98 to-background/95 backdrop-blur-xl border-primary/30 shadow-2xl">
+        <DialogHeader className="border-b border-primary/20 pb-6 mb-6">
+          <DialogTitle className="text-3xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
+            🚗 Premium Vehicle Collection
           </DialogTitle>
+          <p className="text-muted-foreground mt-2">Discover luxury vehicles, supercars, and exclusive transportation</p>
         </DialogHeader>
         
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {vehicles.map((vehicle) => (
-            <Card key={vehicle.id} className="overflow-hidden border-primary/20 bg-gradient-card backdrop-blur-sm hover:shadow-elevated transition-all duration-300 group">
-              <div className="aspect-video overflow-hidden">
+            <Card key={vehicle.id} className="overflow-hidden border-primary/30 bg-gradient-to-br from-card via-card/95 to-card/90 backdrop-blur-sm hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 group hover:scale-105 hover:border-primary/50">
+              <div className="aspect-video overflow-hidden relative">
                 <img 
                   src={vehicle.image} 
                   alt={vehicle.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <CardContent className="p-4">
-                <h3 className="font-bold text-lg mb-2 text-foreground">{vehicle.name}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{vehicle.specs}</p>
+              <CardContent className="p-6">
+                <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors duration-300">{vehicle.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{vehicle.specs}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-banking-primary">
+                  <span className="text-2xl font-bold bg-gradient-to-r from-banking-primary to-primary bg-clip-text text-transparent">
                     ${vehicle.price.toLocaleString()}
                   </span>
                   <Button 
                     onClick={() => handlePurchase(vehicle)}
-                    className="bg-gradient-primary hover:shadow-glow transition-all duration-300 hover:scale-105"
+                    className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 hover:scale-105 text-white font-semibold"
                   >
                     Buy Now
                   </Button>

@@ -35,11 +35,11 @@ export const AccountBalance = ({ balance, formatBalance }: AccountBalanceProps) 
       <div className="grid grid-cols-2 gap-4 mt-6">
         <div className="text-center">
           <p className="text-white/80 text-xs">This Month</p>
-          <p className="text-lg font-semibold text-banking-income">+$30,000</p>
+          <p className="text-lg font-semibold text-banking-income">+$32,512</p>
         </div>
         <div className="text-center">
           <p className="text-white/80 text-xs">Expenses</p>
-          <p className="text-lg font-semibold text-banking-expense">-$4,000</p>
+          <p className="text-lg font-semibold text-banking-expense">-$4,150</p>
         </div>
       </div>
     </Card>
