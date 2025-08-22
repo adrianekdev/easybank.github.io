@@ -5,36 +5,28 @@ import { Button } from "@/components/ui/button";
 const cards = [
   {
     id: 1,
-    name: "Apple Pay Card 🍎",
-    number: "**** **** **** 1847",
-    type: "Digital",
-    balance: "$25,000.00",
-    color: "bg-gradient-to-br from-gray-900 via-black to-gray-800"
+    name: "Premium Card",
+    number: "**** **** **** 3521",
+    type: "Debit",
+    balance: "$8,430.00",
+    color: "bg-gradient-primary"
   },
   {
     id: 2,
-    name: "Business Card 💼",
-    number: "**** **** **** 5629",
+    name: "Business Card",
+    number: "**** **** **** 7892",
     type: "Credit",
-    balance: "$7,247.83",
-    color: "bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800"
-  },
-  {
-    id: 3,
-    name: "Premium Card 💎",
-    number: "**** **** **** 9384",
-    type: "Debit",
-    balance: "$8,000.00",
-    color: "bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600"
+    balance: "$2,150.00",
+    color: "bg-gradient-success"
   }
 ];
 
 export const BankingCards = () => {
   return (
-    <Card className="p-6 shadow-2xl bg-white/10 backdrop-blur-xl animate-fade-in border border-white/20 hover:bg-white/15 transition-all duration-300">
+    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold text-white drop-shadow-sm">My Cards</h2>
-        <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/20 hover:scale-105 transition-all backdrop-blur-sm">
+        <h2 className="text-lg font-semibold">My Cards</h2>
+        <Button variant="ghost" size="sm" className="text-banking-primary hover:scale-105 transition-transform">
           <MoreHorizontal size={16} />
         </Button>
       </div>
@@ -43,7 +35,7 @@ export const BankingCards = () => {
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className={`${card.color} text-white p-4 rounded-xl relative overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer animate-fade-in backdrop-blur-sm border border-white/20`}
+            className={`${card.color} text-white p-4 rounded-xl relative overflow-hidden transition-all duration-200 hover:scale-105 hover:shadow-elevated cursor-pointer animate-fade-in`}
             style={{animationDelay: `${index * 150}ms`}}
           >
             <div className="flex justify-between items-start mb-8">

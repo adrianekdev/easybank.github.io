@@ -6,11 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
-interface SendMoneyModalProps {
-  onSendMoney: (amount: number) => void;
-}
-
-export const SendMoneyModal = ({ onSendMoney }: SendMoneyModalProps) => {
+export const SendMoneyModal = () => {
   const [username, setUsername] = useState("");
   const [amount, setAmount] = useState("");
   const [note, setNote] = useState("");
@@ -18,19 +14,15 @@ export const SendMoneyModal = ({ onSendMoney }: SendMoneyModalProps) => {
   const { toast } = useToast();
 
   const handleSend = () => {
-    const sendAmount = parseFloat(amount);
-    
-    if (!username || !amount || sendAmount <= 0) {
+    if (!username || !amount) {
       toast({
         title: "Missing Information",
-        description: "Please enter both username and valid amount",
+        description: "Please enter both username and amount",
         variant: "destructive"
       });
       return;
     }
 
-    onSendMoney(sendAmount);
-    
     toast({
       title: "Money Sent! 💰",
       description: `$${amount} sent to @${username}`,

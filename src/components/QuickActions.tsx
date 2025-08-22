@@ -2,11 +2,6 @@ import { CreditCard, PiggyBank } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { SendMoneyModal } from "@/components/SendMoneyModal";
 import { RequestMoneyModal } from "@/components/RequestMoneyModal";
-import { CryptoInvestModal } from "@/components/CryptoInvestModal";
-import { PayBillsModal } from "@/components/PayBillsModal";
-import { BuyCarModal } from "@/components/BuyCarModal";
-import { BuyHouseModal } from "@/components/BuyHouseModal";
-import { GamblingModal } from "@/components/GamblingModal";
 
 const staticActions = [
   {
@@ -14,29 +9,33 @@ const staticActions = [
     label: "Pay Bills",
     color: "text-banking-expense",
     bg: "bg-banking-expense/10"
+  },
+  {
+    icon: PiggyBank,
+    label: "Save",
+    color: "text-banking-income",
+    bg: "bg-banking-income/10"
   }
 ];
 
-interface QuickActionsProps {
-  onSendMoney: (amount: number) => void;
-  onCryptoInvest: (investAmount: number, result: number) => void;
-  onPayBill: (amount: number) => void;
-  onPurchase: (amount: number) => void;
-  onGamble: (betAmount: number, result: number) => void;
-}
-
-export const QuickActions = ({ onSendMoney, onCryptoInvest, onPayBill, onPurchase, onGamble }: QuickActionsProps) => {
+export const QuickActions = () => {
   return (
-    <Card className="p-8 shadow-2xl bg-white/10 backdrop-blur-xl animate-fade-in border border-white/20 hover:bg-white/15 transition-all duration-300">
-      <h2 className="text-xl font-bold mb-8 text-white drop-shadow-lg">Quick Actions</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
-        <SendMoneyModal onSendMoney={onSendMoney} />
+    <Card className="p-6 shadow-card bg-gradient-card animate-fade-in">
+      <h2 className="text-lg font-semibold mb-4">Quick Actions</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <SendMoneyModal />
         <RequestMoneyModal />
-        <CryptoInvestModal onInvest={onCryptoInvest} />
-        <PayBillsModal onPayBill={onPayBill} />
-        <BuyCarModal onPurchase={onPurchase} />
-        <BuyHouseModal onPurchase={onPurchase} />
-        <GamblingModal onGamble={onGamble} />
+        {staticActions.map((action, index) => (
+          <button
+            key={index}
+            className="flex flex-col items-center gap-2 p-4 rounded-lg hover:bg-muted/50 transition-all duration-200 hover:scale-105 group"
+          >
+            <div className={`p-3 rounded-full ${action.bg} group-hover:animate-pulse-glow`}>
+              <action.icon className={`w-5 h-5 ${action.color}`} />
+            </div>
+            <span className="text-sm font-medium">{action.label}</span>
+          </button>
+        ))}
       </div>
     </Card>
   );
